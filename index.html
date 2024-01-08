@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>les petits plats</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Raleway:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dist/style.css" />
+  </head>
+  <body>
+    <header class="p-10 h-96 bg-[url('/assets/images/header.png')]">
+      <img
+        src="./assets/logo/Logo.png"
+        alt="Logo de les petits plats"
+        class="w-32"
+      />
+      <div class="w-9/12 m-auto mt-20">
+        <h1 class="text-center text-3xl text-yellow-400 font-bold mb-5">
+          CHERCHEZ PARMI PLUS DE 1500 RECETTE DU QUOTIDIEN,SIMPLES ET
+          DÉLICIEUSES
+        </h1>
+        <div class="flex border p-3 justify-between bg-white rounded-lg">
+          <input
+            type="text"
+            placeholder="Rechercher une recette, un ingrédient, ..."
+            class="w-10/12"
+          />
+          <button type="button" class="rounded-lg bg-black p-2">
+            <img src="./assets/logo/searchWhite.png" alt="logo recherche" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-gray-400">
+    <nav>
+      <div class="bg-white w-1/3 flex-col">
+          <button class="flex items-center p-1 shadow-lg rounded-lg">
+            <span class="mr-2">Ingrédient</span>
+            <img src="./assets/logo/arrow.png" alt="logo de fleche" />
+          </button>
+          <ul>
+            <li class="flex border p-1 justify-between bg-white rounded-lg">
+              <input
+                type="text"
+                class="w-11/12"
+              />
+              <button type="button" class="rounded-lg bg-black p-2">
+                <img src="./assets/logo/searchWhite.png" alt="logo recherche" />
+              </button>
+            </li>
+            <li>
+              <button>
+                <span>Popularité</span>
+              </button>
+            </li>
+            <li>
+              <button>
+                <span>Titre</span>
+              </button>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <section></section>
+    </main>
+  </body>
+  <script type="module" src="script/index.js"></script>
+</html>
