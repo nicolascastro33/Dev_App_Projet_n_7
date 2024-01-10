@@ -33,10 +33,10 @@
           <input
             type="text"
             placeholder="Rechercher une recette, un ingrédient, ..."
-            class="w-10/12"
+            class="w-11/12 mainSortBy"
           />
           <div class="flex">
-            <button type="button" class="hidden">
+            <button type="button" class="hidden mainCloseSortBy">
               <img src="./assets/logo/close.png" alt="logo fermer" />
             </button>
             <button type="button" class="rounded-lg bg-black p-2 ml-4">
@@ -47,14 +47,14 @@
       </div>
     </header>
 
-    <main class="bg-gray-400 pb-10 pt-10 pr-16 pl-16">
+    <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
       <nav class="grid grid-cols-nav">
         <div class="flex justify-between items-start">
           <div
             class="overflow-hidden select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all -translate-y-36 z-0"
+              class="options-container order-1 max-h-0 opacity-0 transition-all -translate-y-24"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -165,43 +165,14 @@
             </div>
           </div>
         </div>
-        <aside class="p-2 flex justify-end font-semibold font-anton text-lg">
-          <h2>1500 recettes</h2>
+        <aside class="p-2 flex justify-end font-semibold font-anton text-lg numberRecipes">
+          <h2></h2>
         </aside>
       </nav>
-      <section class="grid-cols-1 mt-12 ">
-        <article class="w-96 min-h-[700px] rounded-xl drop-shadow-lg overflow-hidden bg-white">
-          <div class="overflow-hidden relative h-72">
-            <img src="./assets/recipesPictures/Recette01.jpg" alt="photo" class="absolute w-[105%] translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%]" />
-          </div>
-          <div class="p-6">
-            <h3 class="font-anton font-bold">Titre de la recette</h3>
-            <div>
-              <div>
-                <h4 class="text-gray-400">Recette</h4>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolorem sapiente quisquam hic voluptatum. Minus repellat
-                  laboriosam quasi non, sint dolor quisquam! 
-                </p>
-              </div>
-              <div>
-                <h4 class="text-gray-400">Ingrédients</h4>
-                <ul class="grid grid-cols-2">
-                  <li class="list-none">
-                    <h5>Lait de coco</h5>
-                    <p class="text-gray-400">50ml</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <aside class="absolute top-6 right-6 flex justify-center rounded-xl bg-yellow-400 p-1 min-w-20">
-            <p class="font-semibold">50min</p>
-          </aside>
-        </article>
+      <section class="grid grid-cols-3 mt-12 gap-6">
+        
       </section>
     </main>
   </body>
-  <script type="module" src="script/index.js"></script>
+  <script type="module" src="/script/index.js"></script>
 </html>

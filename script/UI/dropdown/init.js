@@ -4,7 +4,7 @@ import {
   favoriteButtonSetting,
   unfavoriteButtonSetting,
   searchSortBySetting,
-} from './setting.js';
+} from '../utils/setting.js';
 
 export function initDropdown() {
   const selected = document.querySelectorAll('.selected');
@@ -14,7 +14,10 @@ export function initDropdown() {
 
   searchSortBy.forEach((input) => {
     input.addEventListener('change', () => {
-      searchSortByImageSetting(input);
+    const eraseButton = input
+    .closest('.select-box')
+    .querySelector('.closeButtonDropdown');
+      searchSortByImageSetting(input, eraseButton);
       searchSortBySetting(input);
     });
   });
@@ -22,16 +25,14 @@ export function initDropdown() {
   closeButtonDropdown.forEach((closeButton) => {
     closeButton.addEventListener('click', (event) => {
       const input = event.target.closest('.options-container').querySelector('input')
-      closeButtonDropdownSetting(event);
+      closeButtonDropdownSetting(event, input);
       searchSortBySetting(input)
     });
   });
 
   selected.forEach((element) => {
     element.addEventListener('click', () => {
-  
-    console.log(element.closest('.select-box'))
-    element.closest('.select-box').classList.toggle('open');
+      element.closest('.select-box').classList.toggle('open');
   });
   })
 

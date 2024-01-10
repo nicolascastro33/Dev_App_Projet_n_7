@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       'favorite': '-99',
       gridTemplateColumns:{
-        'nav': '1.5fr 1fr'
+        'nav': '2fr 1fr'
       }
     },
   },
