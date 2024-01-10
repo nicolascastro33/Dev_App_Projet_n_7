@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Manrope', sans-serif;
+  margin: auto;
+  text-overflow: ellipsis;
+}
+
+.open{
+ & .options-container {
+    max-height: 240px;
+    opacity: 1;
+    /* overflow-y: scroll; */
+    transform: translate(0);
+    transition: all 1000ms;
+  }
+}
+
+.open .selected img {
+  transform: rotateX(180deg);
+  transition: all 1000ms;
+}
+
+.selectedOption{
+  background-color: #FFD15B;
+  cursor: initial;
+  order: -1;  
+  & label{
+    cursor: initial;
+  }
+  &:hover{
+    font-weight: bold;
+  }
+}
+
+
+.option button{
+  background-color: black;
+  border-radius: 100%;
+  width: 17px;
+  height: 17px;
+  position: relative;
+  & img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+  }
+}
