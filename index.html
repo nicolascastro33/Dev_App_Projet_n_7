@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/dist/style.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css/style.css" />
   </head>
   <body>
     <header class="p-10 h-96 bg-[url('/assets/images/header.png')]">
@@ -47,14 +47,14 @@
       </div>
     </header>
 
-    <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
-      <nav class="grid grid-cols-nav">
-        <div class="flex justify-between items-start">
+    <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16 ">
+      <nav class="grid grid-cols-nav mb-5">
+        <div class="flex justify-between items-start ">
           <div
-            class="overflow-hidden select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg"
+            class="select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all -translate-y-24"
+              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg "
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -89,10 +89,10 @@
             </div>
           </div>
           <div
-            class="overflow-hidden select-box appliance bg-white w-56 flex flex-col shadow-lg rounded-lg"
+            class="select-box appliance bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all -translate-y-36 z-0"
+              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -127,10 +127,10 @@
             </div>
           </div>
           <div
-            class="overflow-hidden select-box ustensils bg-white w-56 flex flex-col shadow-lg rounded-lg"
+            class="select-box ustensils bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all -translate-y-36 z-0"
+              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
