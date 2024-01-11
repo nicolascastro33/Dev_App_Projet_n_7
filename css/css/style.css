@@ -6,6 +6,7 @@ body {
   font-family: 'Manrope', sans-serif;
   margin: auto;
   text-overflow: ellipsis;
+  width: 100%;
 }
 
 .open{
@@ -20,8 +21,6 @@ body {
   transform: rotateX(180deg);
   transition: all 1000ms;
 }
-
-.open
 
 .selectedOption{
   background-color: #FFD15B;
@@ -48,4 +47,79 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);;
   }
+}
+
+/* Without tailwind */
+.imgWrapper{
+  overflow: hidden;
+  position: relative;
+  height: 18rem;
+  & img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.textWrapper{
+  padding: 1.5rem;
+  & h3{
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+}
+
+.descriptionTextWrapper{
+  margin-bottom: 0.75rem;
+  & h4{
+    color: gray;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.ingredientHeader{
+  color: gray;
+  margin-bottom: 0.75rem;
+}
+
+.listWrapper{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.asideTimeWrapper{
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background-color: #FFD15B;
+  padding: 0.25rem;
+  min-width: 5rem;
+  & p{
+    font-weight: 600;
+  }
+}
+
+.recipeTemplateWrapper{
+  position: relative;
+  min-height: 700px;
+  border-radius: 0.5rem;
+  /* box-shadow: 1px 1px 1px black; */
+  overflow: hidden;
+  background-color: white;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.quantityIngredient{
+  color: grey;
+}
+
+.ingredientsTemplateWrapper{
+  list-style-type: none;
 }

@@ -1,4 +1,4 @@
-import { recipeTemplates, ingredientsTemplate } from './template.js';
+import { recipeTemplates, ingredientsTemplate } from './withoutTailwindTemplate.js';
 
 export function displayDataRecipes(data) {
   const section = document.querySelector('section');

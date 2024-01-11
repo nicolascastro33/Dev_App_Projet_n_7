@@ -16,20 +16,20 @@
     <link rel="stylesheet" href="css/css/style.css" />
   </head>
   <body>
-    <header class="p-10 h-96 bg-[url('/assets/images/header.png')]">
+    <header class="p-10 h-[567px] bg-cover bg-[url('/assets/images/header.png')]">
       <img
         src="./assets/logo/Logo.png"
         alt="Logo de les petits plats"
-        class="w-32"
+        class="w-40"
       />
-      <div class="w-9/12 m-auto mt-20">
+      <div class="w-9/12 m-auto mt-36 flex flex-col justify-center items-center">
         <h1
-          class="text-center text-3xl text-yellow-400 font-bold mb-5 font-anton"
+          class="text-center text-4xl leading-[140%] text-[#FFD15B] font-bold mb-5 font-anton w-9/12"
         >
           CHERCHEZ PARMI PLUS DE 1500 RECETTE DU QUOTIDIEN,SIMPLES ET
           DÉLICIEUSES
         </h1>
-        <div class="flex border p-3 justify-between bg-white rounded-lg">
+        <div class="flex border p-3 justify-between bg-white rounded-lg w-full">
           <input
             type="text"
             placeholder="Rechercher une recette, un ingrédient, ..."
@@ -47,14 +47,14 @@
       </div>
     </header>
 
-    <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16 ">
+    <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
       <nav class="grid grid-cols-nav mb-5">
         <div class="flex justify-between items-start ">
           <div
             class="select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg "
+              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -92,7 +92,7 @@
             class="select-box appliance bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg"
+              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -130,7 +130,7 @@
             class="select-box ustensils bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all z-0 absolute top-7 bg-white rounded-lg shadow-lg"
+              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -169,7 +169,7 @@
           <h2></h2>
         </aside>
       </nav>
-      <section class="grid grid-cols-3 mt-12 gap-6">
+      <section class="grid grid-cols-3 mt-12 gap-6 ">
         
       </section>
     </main>

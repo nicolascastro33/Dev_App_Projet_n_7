@@ -14,12 +14,12 @@ export function recipeTemplates(data) {
               </div>
               <div>
                 <h4 class="text-gray-400 mb-3">Ingrédients</h4>
-                <ul class="grid grid-cols-2 gap-3 ingredientsList">
+                <ul class="grid grid-cols-2 gap-3 drop-shadow-xl ingredientsList">
                 </ul>
               </div>
             </div>
           </div>
-          <aside class="absolute top-6 right-6 flex justify-center rounded-xl bg-yellow-400 p-1 min-w-20">
+          <aside class="absolute top-6 drop-shadow-lg right-6 flex justify-center rounded-xl bg-yellow-400 p-1 min-w-20">
             <p class="font-semibold">${data.time}min</p>
           </aside>
     `;
