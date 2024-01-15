@@ -16,13 +16,17 @@
     <link rel="stylesheet" href="css/css/style.css" />
   </head>
   <body>
-    <header class="p-10 h-[567px] bg-cover bg-[url('/assets/images/header.png')]">
+    <header
+      class="p-10 h-[567px] lg:h-[467px] bg-cover bg-[url('/assets/images/header.png')]"
+    >
       <img
         src="./assets/logo/Logo.png"
         alt="Logo de les petits plats"
         class="w-40"
       />
-      <div class="w-9/12 m-auto mt-36 flex flex-col justify-center items-center">
+      <div
+        class="w-9/12 m-auto lg:mt-32 mt-36 flex flex-col justify-center items-center"
+      >
         <h1
           class="text-center text-4xl leading-[140%] text-[#FFD15B] font-bold mb-5 font-anton w-9/12"
         >
@@ -34,6 +38,7 @@
             type="text"
             placeholder="Rechercher une recette, un ingrédient, ..."
             class="w-11/12 mainSortBy"
+            id="mainInput"
           />
           <div class="flex">
             <button type="button" class="hidden mainCloseSortBy">
@@ -49,12 +54,13 @@
 
     <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
       <nav class="grid grid-cols-nav mb-5">
-        <div class="flex justify-between items-start ">
+        <div class="flex justify-between items-start">
           <div
             class="select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            id="ingredient"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
+              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -78,7 +84,7 @@
               <div class="sortByDataWrapper flex flex-col"></div>
             </div>
             <div
-              class="flex justify-between items-center cursor-pointer z-30 p-2 selected"
+              class="flex justify-between items-center cursor-pointer z-60 p-2 selected"
             >
               <h2>Ingrédients</h2>
               <img
@@ -90,9 +96,10 @@
           </div>
           <div
             class="select-box appliance bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            id="appliance"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
+              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -128,9 +135,10 @@
           </div>
           <div
             class="select-box ustensils bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            id="ustensil"
           >
             <div
-              class="options-container order-1 max-h-0 opacity-0 transition-all absolute top-7 bg-white rounded-lg shadow-lg z-50"
+              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input type="text" class="w-9/12 searchSortby" />
@@ -165,13 +173,16 @@
             </div>
           </div>
         </div>
-        <aside class="p-2 flex justify-end font-semibold font-anton text-lg numberRecipes">
+        <aside
+          class="p-2 flex justify-end font-semibold font-anton text-lg numberRecipes"
+        >
           <h2></h2>
         </aside>
       </nav>
-      <section class="grid grid-cols-3 mt-12 gap-6 ">
-        
-      </section>
+      <section class="grid grid-cols-5 tagsSection cursor-auto gap-4"></section>
+      <section
+        class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 mt-12 gap-6 recipesSection"
+      ></section>
     </main>
   </body>
   <script type="module" src="/script/index.js"></script>

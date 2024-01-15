@@ -9,11 +9,12 @@ body {
   width: 100%;
 }
 
-.open{
- & .options-container {
+
+
+.open {
+  & .options-container {
     max-height: 240px;
-    opacity: 1;
-    transition: all 1000ms;
+    display: block;
   }
 }
 
@@ -22,39 +23,25 @@ body {
   transition: all 1000ms;
 }
 
-.selectedOption{
-  background-color: #FFD15B;
+.selectedOption {
+  background-color: #ffd15b;
   cursor: initial;
-  order: -1;  
-  & label{
+  order: -1;
+  & label {
     cursor: initial;
   }
-  &:hover{
+  &:hover {
     font-weight: bold;
   }
 }
 
-
-.option button{
+.option button {
   background-color: black;
   border-radius: 100%;
   width: 17px;
   height: 17px;
   position: relative;
-  & img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);;
-  }
-}
-
-/* Without tailwind */
-.imgWrapper{
-  overflow: hidden;
-  position: relative;
-  height: 18rem;
-  & img{
+  & img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -62,64 +49,79 @@ body {
   }
 }
 
-.textWrapper{
+/* Without tailwind */
+.imgWrapper {
+  overflow: hidden;
+  position: relative;
+  height: 18rem;
+  & img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.textWrapper {
   padding: 1.5rem;
-  & h3{
+  & h3 {
     font-family: 'Anton', sans-serif;
     font-weight: bold;
     margin-bottom: 1rem;
   }
 }
 
-.descriptionTextWrapper{
+.descriptionTextWrapper {
   margin-bottom: 0.75rem;
-  & h4{
+  & h4 {
     color: gray;
     margin-bottom: 0.75rem;
   }
 }
 
-.ingredientHeader{
+.ingredientHeader {
   color: gray;
   margin-bottom: 0.75rem;
 }
 
-.listWrapper{
+.listWrapper {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
-.asideTimeWrapper{
+.asideTimeWrapper {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
   display: flex;
   justify-content: center;
   border-radius: 0.75rem;
-  background-color: #FFD15B;
+  background-color: #ffd15b;
   padding: 0.25rem;
   min-width: 5rem;
-  & p{
+  & p {
     font-weight: 600;
   }
 }
 
-.recipeTemplateWrapper{
+.recipeTemplateWrapper {
   position: relative;
   min-height: 700px;
-  border-radius: 0.5rem;
-  /* box-shadow: 1px 1px 1px black; */
+  border-radius: 1rem;
   overflow: hidden;
   background-color: white;
-  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.quantityIngredient{
+.quantityIngredient {
   color: grey;
 }
 
-.ingredientsTemplateWrapper{
+.ingredientsTemplateWrapper {
   list-style-type: none;
 }

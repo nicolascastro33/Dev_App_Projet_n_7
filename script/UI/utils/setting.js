@@ -1,3 +1,6 @@
+import { dataSortBy } from "./getDataSortBy.js";
+import { displayTag, eraseTag } from "../tags/display.js";
+
 export function searchSortByImageSetting(input, button) {
   const oldButtonClassName = input.value === '' ? 'block' : 'hidden';
   const newButtonClassName = input.value === '' ? 'hidden' : 'block';
@@ -46,14 +49,22 @@ export function favoriteButtonSetting(event, option) {
     unfavoriteImg.id = 'unfavoriteImg';
     unfavoriteButton.appendChild(unfavoriteImg);
     option.appendChild(unfavoriteButton);
+    displayTag(option)    
+    console.log(dataSortBy())
+
   }
 }
 
 export function unfavoriteButtonSetting(option) {
   option.querySelector('button')?.addEventListener('click', () => {
-    if (option.classList.contains('selectedOption')) {
-      option.classList.remove('selectedOption');
-    }
-    option.querySelector('button')?.remove();
+    eraseFavoriteDisplay(option)
   });
+}
+
+export function eraseFavoriteDisplay(option){
+  if (option.classList.contains('selectedOption')) {
+    option.classList.remove('selectedOption');
+  }
+  option.querySelector('button')?.remove();
+  eraseTag(option)
 }
