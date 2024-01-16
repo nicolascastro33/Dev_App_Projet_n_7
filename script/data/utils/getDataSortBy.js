@@ -1,4 +1,4 @@
-export function dataSortBy() {
+export function sortByData() {
   const allTags = document.querySelectorAll('.tagWrapper');
   const inputValue = document.getElementById('mainInput').value;
   const sortByData = {

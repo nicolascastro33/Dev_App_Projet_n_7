@@ -1,9 +1,10 @@
+import { displayTag } from '../tags/display.js';
+import { displayNewRecipes } from '../utils/displayNewRecipes.js';
 import {
   searchSortByImageSetting,
   closeButtonDropdownSetting,
-  favoriteButtonSetting,
-  unfavoriteButtonSetting,
   searchSortBySetting,
+  eraseFavoriteDisplay,
 } from '../utils/setting.js';
 
 export function initDropdown() {
@@ -43,6 +44,37 @@ export function initDropdown() {
     option.addEventListener('click', (event) => {
       favoriteButtonSetting(event, option);
       unfavoriteButtonSetting(option);
+      displayNewRecipes()
     });
+  });
+}
+
+
+function favoriteButtonSetting(event, option) {
+  if (
+    event.target.id === 'unfavoriteButton' ||
+    event.target.id === 'unfavoriteImg'
+  ) {
+    return;
+  }
+  option.classList.add('selectedOption');
+  if (!option.querySelector('button')) {
+    const unfavoriteButton = document.createElement('button');
+    const unfavoriteImg = document.createElement('img');
+    unfavoriteImg.src = '/assets/logo/whiteClose.png';
+    unfavoriteImg.alt = 'sortir des favoris';
+    unfavoriteButton.type = 'button';
+    unfavoriteButton.id = 'unfavoriteButton';
+    unfavoriteImg.id = 'unfavoriteImg';
+    unfavoriteButton.appendChild(unfavoriteImg);
+    option.appendChild(unfavoriteButton);
+    displayTag(option);
+  }
+}
+
+function unfavoriteButtonSetting(option) {
+  option.querySelector('button')?.addEventListener('click', () => {
+    eraseFavoriteDisplay(option);
+    displayNewRecipes()
   });
 }

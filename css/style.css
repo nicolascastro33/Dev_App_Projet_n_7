@@ -21,6 +21,7 @@ body {
   width: 100%;
 }
 
+
 .open {
   & .options-container {
     max-height: 240px;

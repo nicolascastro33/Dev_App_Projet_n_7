@@ -37,7 +37,7 @@
           <input
             type="text"
             placeholder="Rechercher une recette, un ingrédient, ..."
-            class="w-11/12 mainSortBy"
+            class="w-11/12 mainSortBy focus:outline-none"
             id="mainInput"
           />
           <div class="flex">
@@ -63,7 +63,7 @@
               class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
-                <input type="text" class="w-9/12 searchSortby" />
+                <input type="text" class="w-9/12 searchSortby focus:outline-none" />
                 <div class="flex">
                   <button type="button" class="hidden closeButtonDropdown">
                     <img
@@ -102,7 +102,7 @@
               class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
-                <input type="text" class="w-9/12 searchSortby" />
+                <input type="text" class="w-9/12 searchSortby focus:outline-none" />
                 <div class="flex">
                   <button type="button" class="hidden closeButtonDropdown">
                     <img
@@ -141,7 +141,7 @@
               class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-50"
             >
               <div class="flex border justify-between rounded-lg m-2">
-                <input type="text" class="w-9/12 searchSortby" />
+                <input type="text" class="w-9/12 searchSortby focus:outline-none" />
                 <div class="flex">
                   <button type="button" class="hidden closeButtonDropdown">
                     <img
@@ -180,8 +180,9 @@
         </aside>
       </nav>
       <section class="grid grid-cols-5 tagsSection cursor-auto gap-4"></section>
+      <p id="errorMessage" class="mt-10"></p>
       <section
-        class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 mt-12 gap-6 recipesSection"
+        class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 mt-12 gap-6 min-h-28 recipesSection"
       ></section>
     </main>
   </body>

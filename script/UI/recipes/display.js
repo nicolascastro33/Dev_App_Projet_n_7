@@ -5,7 +5,6 @@ export function displayDataRecipes(data) {
   data.forEach((element) => {
     const template = recipeTemplates(element);
     section.appendChild(template);
-
     ingredientsDisplay(element);
   });
 }

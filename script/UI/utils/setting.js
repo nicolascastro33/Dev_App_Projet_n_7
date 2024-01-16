@@ -1,4 +1,4 @@
-import { displayTag, eraseTag } from "../tags/display.js";
+import { eraseTag } from '../tags/display.js';
 
 export function searchSortByImageSetting(input, button) {
   const oldButtonClassName = input.value === '' ? 'block' : 'hidden';
@@ -30,38 +30,11 @@ export function closeButtonDropdownSetting(event, input) {
   input.value = '';
 }
 
-export function favoriteButtonSetting(event, option) {
-  if (
-    event.target.id === 'unfavoriteButton' ||
-    event.target.id === 'unfavoriteImg'
-  ) {
-    return;
-  }
-  option.classList.add('selectedOption');
-  if (!option.querySelector('button')) {
-    const unfavoriteButton = document.createElement('button');
-    const unfavoriteImg = document.createElement('img');
-    unfavoriteImg.src = '/assets/logo/whiteClose.png';
-    unfavoriteImg.alt = 'sortir des favoris';
-    unfavoriteButton.type = 'button';
-    unfavoriteButton.id = 'unfavoriteButton';
-    unfavoriteImg.id = 'unfavoriteImg';
-    unfavoriteButton.appendChild(unfavoriteImg);
-    option.appendChild(unfavoriteButton);
-    displayTag(option)    
-  }
-}
 
-export function unfavoriteButtonSetting(option) {
-  option.querySelector('button')?.addEventListener('click', () => {
-    eraseFavoriteDisplay(option)
-  });
-}
-
-export function eraseFavoriteDisplay(option){
+export function eraseFavoriteDisplay(option) {
   if (option.classList.contains('selectedOption')) {
     option.classList.remove('selectedOption');
   }
   option.querySelector('button')?.remove();
-  eraseTag(option)
+  eraseTag(option);
 }
