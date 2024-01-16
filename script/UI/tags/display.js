@@ -1,3 +1,4 @@
+import { getTypeTags } from "../utils/typeTags.js"
 import { tagTemplate } from "./template.js"
 
 export function displayTag(option){
@@ -7,6 +8,7 @@ export function displayTag(option){
 }
 
 export function eraseTag(option){
-    const tagTemplateWrapper = document.getElementById(`tag-${option.textContent.split(' ').join('').trim()}`)
+    let sortBy = getTypeTags(option)
+    const tagTemplateWrapper = document.getElementById(`tag-${sortBy}-${option.textContent.split(' ').join('').trim()}`)
     tagTemplateWrapper?.remove()
 }

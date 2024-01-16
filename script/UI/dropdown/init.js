@@ -14,7 +14,7 @@ export function initDropdown() {
 
 
   searchSortBy.forEach((input) => {
-    input.addEventListener('change', () => {
+    input.addEventListener('input', () => {
       const eraseButton = input
         .closest('.select-box')
         .querySelector('.closeButtonDropdown');

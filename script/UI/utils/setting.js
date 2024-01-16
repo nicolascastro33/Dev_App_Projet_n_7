@@ -1,4 +1,3 @@
-import { dataSortBy } from "./getDataSortBy.js";
 import { displayTag, eraseTag } from "../tags/display.js";
 
 export function searchSortByImageSetting(input, button) {
@@ -50,8 +49,6 @@ export function favoriteButtonSetting(event, option) {
     unfavoriteButton.appendChild(unfavoriteImg);
     option.appendChild(unfavoriteButton);
     displayTag(option)    
-    console.log(dataSortBy())
-
   }
 }
 

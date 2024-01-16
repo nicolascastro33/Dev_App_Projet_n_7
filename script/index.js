@@ -1,8 +1,5 @@
 import { initDropdown } from './UI/dropdown/init.js';
 import {
-  sortByDataTestAppliance,
-  sortByDataTestIngredients,
-  sortByDataTestUstensils,
   recipesTest,
 } from '../data/recipes_test.js';
 import { displayDataSortBy } from './UI/dropdown/display.js';
@@ -10,19 +7,22 @@ import { displayDataRecipes } from './UI/recipes/display.js';
 import { displayNumberRecipes } from './UI/utils/numberRecipes.js';
 import { initButtonClose } from './UI/headerSortBy/init.js';
 import { initTagsSetting } from './UI/tags/init.js';
-import { getNewData } from './data/newData.js';
+// import { getNewData } from './data/newData.js';
+import { getDataTags } from './data/utils/getTagsData.js';
 
 
 //Partie data
-getNewData(recipesTest)
+// getNewData(recipesTest)
+
 //Partie UI
 //Mise en place header Sortby
 initButtonClose();
 
 //Mise en place sort by
-displayDataSortBy(sortByDataTestIngredients, 'ingredients');
-displayDataSortBy(sortByDataTestAppliance, 'appliance');
-displayDataSortBy(sortByDataTestUstensils, 'ustensils');
+const {ingredientsTags, ustensilsTags, appliancesTags} = getDataTags(recipesTest)
+displayDataSortBy(ingredientsTags, 'ingredients');
+displayDataSortBy(appliancesTags, 'appliance');
+displayDataSortBy(ustensilsTags, 'ustensils');
 initDropdown();
 
 //Mise en place affichage recette

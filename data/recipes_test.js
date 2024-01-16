@@ -110,23 +110,3 @@ export const recipesTest = [
         "ustensils": ["couteau"]
     }
 ]
-
-export const sortByDataTestUstensils = [
-    "couteau",
-    'presse citron',
-    'verres',
-    'cuillères à soupe'
-]
-
-export const sortByDataTestIngredients = [
-    "Huile d'olive",
-    'Crème de coco',
-    'Tomates',
-    'Manioc'
-]
-
-export const sortByDataTestAppliance = [
-    "Cocotte",
-    'Saladier',
-    'Blender'
-]

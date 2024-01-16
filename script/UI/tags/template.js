@@ -1,5 +1,7 @@
+import { getTypeTags } from "../utils/typeTags.js"
+
 export function tagTemplate(data){
-    const typeTag = document.getElementById(`option-${data.textContent.split(' ').join('').trim()}`).closest('.select-box').id
+    const typeTag = getTypeTags(data)
     const tagWrapper = document.createElement('div')
     tagWrapper.className = "bg-[#FFD15B] w-56 rounded-xl flex justify-between items-center p-3 shadow-lg tagWrapper"
     tagWrapper.id = `tag-${typeTag}-${data.textContent.split(' ').join('').trim()}`
