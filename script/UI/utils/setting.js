@@ -14,12 +14,18 @@ export function searchSortBySetting(input) {
     .querySelectorAll('.option');
   allElements.forEach((element) => {
     const name = element.querySelector('label').innerText;
-    if (input.value?.trim() === '') {
-      element.classList.remove('hidden');
-    } else if (name.toLowerCase().includes(input.value.trim().toLowerCase())) {
-      element.classList.remove('hidden');
-    } else if (!name.toLowerCase().includes(input.value.trim().toLowerCase())) {
-      element.classList.add('hidden');
+    if (!element.classList.value.includes('notSelected')) {
+      if (input.value?.trim() === '') {
+        element.classList.remove('hidden');
+      } else if (
+        name.toLowerCase().includes(input.value.trim().toLowerCase())
+      ) {
+        element.classList.remove('hidden');
+      } else if (
+        !name.toLowerCase().includes(input.value.trim().toLowerCase())
+      ) {
+        element.classList.add('hidden');
+      }
     }
   });
 }
@@ -29,7 +35,6 @@ export function closeButtonDropdownSetting(event, input) {
   event.target.closest('button').classList.add('hidden');
   input.value = '';
 }
-
 
 export function eraseFavoriteDisplay(option) {
   if (option.classList.contains('selectedOption')) {

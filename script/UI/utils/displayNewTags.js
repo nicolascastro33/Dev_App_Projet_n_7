@@ -1,4 +1,4 @@
-import { getDataTags } from '../../data/utils/getTagsData.js';
+import { getDataTags } from '../../UI/utils/getTagsData.js';
 
 export function displayNewTags(recipes) {
   const { ingredientsTags, ustensilsTags, appliancesTags } =
@@ -8,13 +8,13 @@ export function displayNewTags(recipes) {
   changeDisplayTag(appliancesTags, 'appliance');
 }
 
-export function displayNewTagsNoData(){
-    const allOptions = document.querySelectorAll('.option')
-    allOptions.forEach((option) => {
-        if(!option.className.includes('selectedOption')){
-            option.classList.add('hidden');
-        }
-    })
+export function displayNewTagsNoData() {
+  const allOptions = document.querySelectorAll('.option');
+  allOptions.forEach((option) => {
+    if (!option.className.includes('selectedOption')) {
+      option.classList.add('hidden');
+    }
+  });
 }
 
 function changeDisplayTag(tagData, option) {
@@ -32,8 +32,10 @@ function changeDisplayTag(tagData, option) {
     });
     if (isInclude) {
       element.classList.remove('hidden');
+      element.classList.remove('notSelected');
     } else {
       element.classList.add('hidden');
+      element.classList.add('notSelected');
     }
   });
 }

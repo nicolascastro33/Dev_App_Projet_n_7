@@ -1,4 +1,4 @@
-import { recipeTemplates, ingredientsTemplate } from './newTemplate.js';
+import { recipeTemplates, ingredientsTemplate } from './template.js';
 
 export function displayDataRecipes(data) {
   const section = document.querySelector('.recipesSection');

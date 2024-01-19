@@ -13,7 +13,6 @@ export function initDropdown() {
   const closeButtonDropdown = document.querySelectorAll('.closeButtonDropdown');
   const searchSortBy = document.querySelectorAll('.searchSortby');
 
-
   searchSortBy.forEach((input) => {
     input.addEventListener('input', () => {
       const eraseButton = input
@@ -44,11 +43,10 @@ export function initDropdown() {
     option.addEventListener('click', (event) => {
       favoriteButtonSetting(event, option);
       unfavoriteButtonSetting(option);
-      displayNewRecipes()
+      displayNewRecipes();
     });
   });
 }
-
 
 function favoriteButtonSetting(event, option) {
   if (
@@ -75,6 +73,6 @@ function favoriteButtonSetting(event, option) {
 function unfavoriteButtonSetting(option) {
   option.querySelector('button')?.addEventListener('click', () => {
     eraseFavoriteDisplay(option);
-    displayNewRecipes()
+    displayNewRecipes();
   });
 }

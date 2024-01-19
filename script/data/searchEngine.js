@@ -1,31 +1,36 @@
 import { recipes } from '../../../data/recipes.js';
 
-export function updateData(tagsData) {
-  let newData = [];
-  newData = updateDataWithInput(tagsData.input);
-  newData = updataDataUstensilsTags(tagsData.tags.ustensils, newData);
-  newData = updataDataIngredientsTags(tagsData.tags.ingredients, newData);
-  newData = updataDataAppliancesTags(tagsData.tags.appliances, newData);
-  return newData;
+export function runSearch(tagsData) {
+  let searchResults = [];
+
+  searchResults = filterByMainText(tagsData.input);
+  searchResults = filterByTagUstensil(tagsData.tags.ustensils, searchResults);
+  searchResults = filterByTagIngredient(
+    tagsData.tags.ingredients,
+    searchResults
+  );
+  searchResults = filterByTagAppliance(tagsData.tags.appliances, searchResults);
+  // console.log(searchResults);
+  return searchResults;
 }
 
-function updateDataWithInput(input) {
+function filterByMainText(text) {
   let newData = [];
-  if (!input) {
+  if (!text) {
     return recipes;
   }
   recipes.forEach((recipe) => {
     let isInclude;
-    if (recipe.name.toLowerCase().includes(input.trim().toLowerCase())) {
+    if (recipe.name.toLowerCase().includes(text.trim().toLowerCase())) {
       isInclude = true;
     } else if (
-      recipe.description.toLowerCase().includes(input.trim().toLowerCase())
+      recipe.description.toLowerCase().includes(text.trim().toLowerCase())
     ) {
       isInclude = true;
     }
     recipe.ingredients?.forEach((ingredient) => {
       if (
-        ingredient.ingredient.toLowerCase().includes(input.trim().toLowerCase())
+        ingredient.ingredient.toLowerCase().includes(text.trim().toLowerCase())
       ) {
         isInclude = true;
       }
@@ -37,7 +42,7 @@ function updateDataWithInput(input) {
   return newData;
 }
 
-function updataDataAppliancesTags(tags, data) {
+function filterByTagAppliance(tags, data) {
   if (tags === undefined || tags.length === 0) {
     return data;
   }
@@ -52,7 +57,7 @@ function updataDataAppliancesTags(tags, data) {
   return newData;
 }
 
-function updataDataIngredientsTags(tags, data) {
+function filterByTagIngredient(tags, data) {
   if (tags === undefined || tags.length === 0) {
     return data;
   }
@@ -75,7 +80,7 @@ function updataDataIngredientsTags(tags, data) {
   return newData;
 }
 
-function updataDataUstensilsTags(tags, data) {
+function filterByTagUstensil(tags, data) {
   if (tags === undefined || tags.length === 0) {
     return data;
   }
