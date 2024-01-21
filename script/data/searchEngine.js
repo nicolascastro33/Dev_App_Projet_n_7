@@ -10,7 +10,6 @@ export function runSearch(tagsData) {
     searchResults
   );
   searchResults = filterByTagAppliance(tagsData.tags.appliances, searchResults);
-  // console.log(searchResults);
   return searchResults;
 }
 
@@ -48,11 +47,15 @@ function filterByTagAppliance(tags, data) {
   }
   let newData = [];
   data.forEach((recipe) => {
+    let isInclude = 0
     tags.forEach((tag) => {
-      if (recipe.appliance.toLowerCase().includes(tag.trim().toLowerCase())) {
-        newData.push(recipe);
+      if (recipe.appliance.trim().toLowerCase().includes(tag.trim().toLowerCase())) {
+        isInclude ++
       }
     });
+    if(isInclude === tags.length){
+      newData.push(recipe);
+    }
   });
   return newData;
 }

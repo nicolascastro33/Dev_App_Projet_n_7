@@ -26,7 +26,7 @@ function changeDisplayTag(tagData, option) {
     let isInclude = false;
     const name = element.querySelector('label').innerText;
     tagData.forEach((tag) => {
-      if (name === tag) {
+      if (name === tag || `${name}s` === tag || `${tag}s` === name) {
         isInclude = true;
       }
     });

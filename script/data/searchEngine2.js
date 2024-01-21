@@ -23,7 +23,6 @@ export function runSearch2(tagsData) {
       searchResults.push(recipes[i]);
     }
   }
-//   console.log(searchResults);
   return searchResults;
 }
 
@@ -71,12 +70,11 @@ function filterByTagIngredient(ingredients, tags, isInclude) {
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
-
+  let tagsInclude = 0;
   for (let i = 0; i < tags.length; i++) {
-    let tagsInclude = 0;
     for (let iI = 0; iI < ingredients.length; iI++) {
       if (
-        ingredients[iI].ingredient
+        ingredients[iI].ingredient.trim()
           .toLowerCase()
           .includes(tags[i].trim().toLowerCase())
       ) {
@@ -94,9 +92,8 @@ function filterByTagUstensil(ustensil, tags, isInclude) {
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
-
+  let tagsInclude = 0;
   for (let i = 0; i < tags.length; i++) {
-    let tagsInclude = 0;
     for (let iU = 0; iU < ustensil.length; iU++) {
       if (ustensil[iU].toLowerCase().includes(tags[i].trim().toLowerCase())) {
         tagsInclude++;

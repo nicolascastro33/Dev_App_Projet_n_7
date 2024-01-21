@@ -24,6 +24,9 @@ export function getDataTags(data) {
 function isIncludeOrNot(array, element) {
   const textElement =
     element.charAt(0).toUpperCase() + element.substring(1).toLowerCase();
+  if(array.includes(textElement + 's') || array.includes(textElement.substring(0, textElement.length - 1))){
+    return
+  }
   if (!array.includes(textElement)) {
     array.push(textElement);
   }

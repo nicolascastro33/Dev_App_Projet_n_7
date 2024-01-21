@@ -3,7 +3,7 @@ export function dropdownTemplates(data, sortBy) {
     <input
       type="radio"
       class="hidden"
-      id="${data}"
+      id="${data}-${sortBy}"
       name="category"
     />
     <label for="${data}" class="cursor-pointer"
