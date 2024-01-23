@@ -2,7 +2,7 @@ import {
   searchSortByImageSetting,
   closeButtonDropdownSetting,
 } from '../utils/setting.js';
-import { displayNewRecipes } from '../utils/displayNewRecipes.js';
+import { displayNewRecipes } from '../displayNewData/displayNewRecipes.js';
 
 export function initButtonClose() {
   const input = document.querySelector('input');
@@ -21,9 +21,8 @@ export function initButtonClose() {
 export function sortByHeaderInputSetting() {
   const mainInput = document.getElementById('mainInput');
   mainInput.addEventListener('input', () => {
-    // if(mainInput.value.length >= 3){
-    //   displayNewRecipes()
-    // }
-    displayNewRecipes();
+    if (mainInput.value.length >= 3 || mainInput.value.length === 0) {
+      displayNewRecipes();
+    }
   });
 }

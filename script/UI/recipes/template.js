@@ -9,7 +9,7 @@ export function recipeTemplates(data) {
   imgWrapper.appendChild(img);
 
   const textWrapper = document.createElement('div');
-  textWrapper.className = 'p-6';
+  textWrapper.className = 'p-6 flex flex-col justify-between';
   const nameRecipe = document.createElement('h3');
   nameRecipe.className = 'font-anton font-bold mb-4';
   nameRecipe.textContent = data.name;

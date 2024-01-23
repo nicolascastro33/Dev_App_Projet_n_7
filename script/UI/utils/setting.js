@@ -1,4 +1,4 @@
-import { eraseTag } from '../tags/display.js';
+import { getTypeTags } from "./typeTags.js";
 
 export function searchSortByImageSetting(input, button) {
   const oldButtonClassName = input.value === '' ? 'block' : 'hidden';
@@ -36,6 +36,12 @@ export function closeButtonDropdownSetting(event, input) {
   input.value = '';
 }
 
+export function eraseTag(option){
+  let sortBy = getTypeTags(option)
+  const tagTemplateWrapper = document.getElementById(`tag-${sortBy}-${option.textContent.split(' ').join('').trim()}`)
+  tagTemplateWrapper?.remove()
+}
+
 export function eraseFavoriteDisplay(option) {
   if (option.classList.contains('selectedOption')) {
     option.classList.remove('selectedOption');
@@ -43,3 +49,4 @@ export function eraseFavoriteDisplay(option) {
   option.querySelector('button')?.remove();
   eraseTag(option);
 }
+

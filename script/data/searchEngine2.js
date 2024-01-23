@@ -3,20 +3,20 @@ import { recipes } from '../../../data/recipes.js';
 export function runSearch2(tagsData) {
   let searchResults = [];
   for (let i = 0; i < recipes.length; i++) {
-    let isInclude = filterByMainText(recipes[i], tagsData.input);
+    let isInclude = filterByMainText(recipes[i], tagsData.text);
     isInclude = filterByTagAppliance(
       recipes[i].appliance,
-      tagsData.tags.appliances,
+      tagsData.appliances,
       isInclude
     );
     isInclude = filterByTagUstensil(
       recipes[i].ustensils,
-      tagsData.tags.ustensils,
+      tagsData.ustensils,
       isInclude
     );
     isInclude = filterByTagIngredient(
       recipes[i].ingredients,
-      tagsData.tags.ingredients,
+      tagsData.ingredients,
       isInclude
     );
     if (isInclude) {
@@ -26,7 +26,7 @@ export function runSearch2(tagsData) {
   return searchResults;
 }
 
-function filterByMainText(recipe, text) {
+export function filterByMainText(recipe, text) {
   let isInclude = false;
   if (!text) {
     isInclude = true;
@@ -49,7 +49,7 @@ function filterByMainText(recipe, text) {
   return isInclude;
 }
 
-function filterByTagAppliance(appliance, tags, isInclude) {
+export function filterByTagAppliance(appliance, tags, isInclude) {
   if (!isInclude) {
     return isInclude;
   } else if (tags === undefined || tags.length === 0) {
@@ -64,7 +64,7 @@ function filterByTagAppliance(appliance, tags, isInclude) {
   return isInclude;
 }
 
-function filterByTagIngredient(ingredients, tags, isInclude) {
+export function filterByTagIngredient(ingredients, tags, isInclude) {
   if (!isInclude) {
     return isInclude;
   } else if (tags === undefined || tags.length === 0) {
@@ -86,7 +86,7 @@ function filterByTagIngredient(ingredients, tags, isInclude) {
   return isInclude;
 }
 
-function filterByTagUstensil(ustensil, tags, isInclude) {
+export function filterByTagUstensil(ustensil, tags, isInclude) {
   if (!isInclude) {
     return isInclude;
   } else if (tags === undefined || tags.length === 0) {

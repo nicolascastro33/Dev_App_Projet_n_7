@@ -1,21 +1,25 @@
-import { sortByData } from '../../UI/utils/getDataSortBy.js';
+import { sortByData } from '../utils/getDataSortBy.js';
 import { displayDataRecipes } from '../recipes/display.js';
 import { runSearch } from '../../data/searchEngine.js';
 import { runSearch2 } from '../../data/searchEngine2.js';
-import { displayNumberRecipes } from './numberRecipes.js';
-import { displayNewTags, displayNewTagsNoData } from './displayNewTags.js';
+import { displayNumberRecipes } from '../utils/numberRecipes.js';
+import {
+  displayNewTags,
+  displayNewTagsNoData,
+} from './displayNewTags.js';
 
 export function displayNewRecipes() {
-  const sortData = sortByData();
-  console.log(sortData)
-  const newData = runSearch(sortData);
-  // const newData2 = runSearch2(sortData)
-  // console.log(newData.length === newData2.length)
+  const filterData = sortByData();
+  const newData = runSearch(filterData);
+  const newData2 = runSearch2(filterData);
+  console.log(newData.length === newData2.length);
 
+  // On efface toutes les recettes ou message d'erreur sur l'interface
   const erroMessageWrapper = document.getElementById('errorMessage');
   const section = document.querySelector('.recipesSection');
   erroMessageWrapper.innerHTML = '';
   section.innerHTML = '';
+
   if (newData.length === 0) {
     const input = document.getElementById('mainInput');
     erroMessageWrapper.innerHTML = `Aucune recette ne contient '${input.value}' vous pouvez chercher « tarte aux pommes », « poisson », etc`;

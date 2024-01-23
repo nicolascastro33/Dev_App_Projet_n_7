@@ -1,5 +1,4 @@
 import { displayTag } from '../tags/display.js';
-import { displayNewRecipes } from '../utils/displayNewRecipes.js';
 import {
   searchSortByImageSetting,
   closeButtonDropdownSetting,
@@ -7,10 +6,21 @@ import {
   eraseFavoriteDisplay,
 } from '../utils/setting.js';
 
-export function initDropdown() {
-  const selected = document.querySelectorAll('.selected');
-  const optionsList = document.querySelectorAll('.option');
-  const closeButtonDropdown = document.querySelectorAll('.closeButtonDropdown');
+export function initDropdown(displayNewRecipes, displayTag) {
+  // Configuration des barres de recherche des dropdowns
+  configSearchBarDropdown();
+
+  // Configuration du bouton d'effacement de la barre de recherche de chaque dropdown
+  configEraseButtonSearchBarDropdown();
+
+  // Configuration des dropdown pour l'ouvrir et le fermer
+  openingDropdown();
+
+  // Configuration des différentes options lors du clic d'un filtre
+  configFilter(displayNewRecipes, displayTag);
+}
+
+function configSearchBarDropdown() {
   const searchSortBy = document.querySelectorAll('.searchSortby');
 
   searchSortBy.forEach((input) => {
@@ -22,7 +32,10 @@ export function initDropdown() {
       searchSortBySetting(input);
     });
   });
+}
 
+function configEraseButtonSearchBarDropdown() {
+  const closeButtonDropdown = document.querySelectorAll('.closeButtonDropdown');
   closeButtonDropdown.forEach((closeButton) => {
     closeButton.addEventListener('click', (event) => {
       const input = event.target
@@ -32,17 +45,25 @@ export function initDropdown() {
       searchSortBySetting(input);
     });
   });
+}
+
+function openingDropdown() {
+  const selected = document.querySelectorAll('.selected');
 
   selected.forEach((element) => {
     element.addEventListener('click', () => {
       element.closest('.select-box').classList.toggle('open');
     });
   });
+}
+
+function configFilter(displayNewRecipes, displayTag) {
+  const optionsList = document.querySelectorAll('.option');
 
   optionsList.forEach((option) => {
     option.addEventListener('click', (event) => {
-      favoriteButtonSetting(event, option);
-      unfavoriteButtonSetting(option);
+      favoriteButtonSetting(event, option, displayTag);
+      unfavoriteButtonSetting(option, displayNewRecipes);
       displayNewRecipes();
     });
   });
@@ -70,7 +91,7 @@ function favoriteButtonSetting(event, option) {
   }
 }
 
-function unfavoriteButtonSetting(option) {
+function unfavoriteButtonSetting(option, displayNewRecipes) {
   option.querySelector('button')?.addEventListener('click', () => {
     eraseFavoriteDisplay(option);
     displayNewRecipes();

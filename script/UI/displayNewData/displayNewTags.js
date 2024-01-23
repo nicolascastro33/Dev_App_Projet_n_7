@@ -1,4 +1,4 @@
-import { getDataTags } from '../../UI/utils/getTagsData.js';
+import { getDataTags } from '../utils/getTagsData.js';
 
 export function displayNewTags(recipes) {
   const { ingredientsTags, ustensilsTags, appliancesTags } =

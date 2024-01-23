@@ -2,12 +2,10 @@ export function sortByData() {
   const allTags = document.querySelectorAll('.tagWrapper');
   const inputValue = document.getElementById('mainInput').value;
   const sortByData = {
-    input: inputValue ? inputValue : undefined,
-    tags: {
-      ingredients: getTagsValue('ingredient', allTags),
-      appliances: getTagsValue('appliance', allTags),
-      ustensils: getTagsValue('ustensil', allTags),
-    },
+    text: inputValue ? inputValue : undefined,
+    ingredients: getTagsValue('ingredient', allTags),
+    appliances: getTagsValue('appliance', allTags),
+    ustensils: getTagsValue('ustensil', allTags),
   };
   return sortByData;
 }

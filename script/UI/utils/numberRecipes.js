@@ -2,7 +2,6 @@ export function displayNumberRecipes(){
     const numberRecipesWrapper = document.querySelector('.numberRecipes h2')
     const numberRecipes = getNumberRecipes()
     numberRecipesWrapper.innerHTML = `${numberRecipes} recettes`
-
 }
 
 function getNumberRecipes(){
