@@ -55,7 +55,11 @@ export function filterByTagAppliance(appliance, tags, isInclude) {
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
-  if(!tags.find((tag) => tag.toLowerCase().includes(appliance.trim().toLowerCase()))){
+  if (
+    !tags.find((tag) =>
+      tag.toLowerCase().includes(appliance.trim().toLowerCase())
+    )
+  ) {
     isInclude = false;
   }
   return isInclude;
@@ -69,13 +73,23 @@ export function filterByTagIngredient(ingredients, tags, isInclude) {
   }
   let tagsInclude = 0;
   tags.forEach((tag) => {
-    if(ingredients.find((oneIngredient) => oneIngredient.ingredient.trim()
-    .toLowerCase()
-    .includes(tag.trim().toLowerCase()))){
+    if (
+      ingredients.find(
+        (oneIngredient) =>
+          oneIngredient.ingredient
+            .trim()
+            .toLowerCase()
+            .includes(tag.trim().toLowerCase()) ||
+          `${oneIngredient.ingredient.trim().toLowerCase()}s` ===
+            tag.trim().toLowerCase() ||
+          oneIngredient.ingredient.trim().toLowerCase() ===
+            `${tag.trim().toLowerCase()}s`
+      )
+    ) {
       tagsInclude++;
     }
     isInclude = tagsInclude === tags.length;
-  })
+  });
   return isInclude;
 }
 
@@ -87,12 +101,14 @@ export function filterByTagUstensil(ustensils, tags, isInclude) {
   }
   let tagsInclude = 0;
   tags.forEach((tag) => {
-    if(ustensils.find((ustensil) => ustensil.trim()
-    .toLowerCase()
-    .includes(tag.trim().toLowerCase()))){
+    if (
+      ustensils.find((ustensil) =>
+        ustensil.trim().toLowerCase().includes(tag.trim().toLowerCase())
+      )
+    ) {
       tagsInclude++;
     }
     isInclude = tagsInclude === tags.length;
-  })
+  });
   return isInclude;
 }
