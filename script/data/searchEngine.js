@@ -23,7 +23,6 @@ export function runSearch(tagsData) {
       searchResults.push(recipe);
     }
   });
-
   return searchResults;
 }
 
@@ -56,11 +55,9 @@ export function filterByTagAppliance(appliance, tags, isInclude) {
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
-  tags.forEach((tag) => {
-    if (!appliance.toLowerCase().includes(tag.trim().toLowerCase())) {
-        isInclude = false;
-      }
-  })
+  if(!tags.find((tag) => tag.toLowerCase().includes(appliance.trim().toLowerCase()))){
+    isInclude = false;
+  }
   return isInclude;
 }
 
@@ -72,16 +69,11 @@ export function filterByTagIngredient(ingredients, tags, isInclude) {
   }
   let tagsInclude = 0;
   tags.forEach((tag) => {
-    ingredients.forEach((oneIngredient) => {
-        if (
-            oneIngredient.ingredient
-              .trim()
-              .toLowerCase()
-              .includes(tag.trim().toLowerCase())
-          ) {
-            tagsInclude++;
-          }
-    })
+    if(ingredients.find((oneIngredient) => oneIngredient.ingredient.trim()
+    .toLowerCase()
+    .includes(tag.trim().toLowerCase()))){
+      tagsInclude++;
+    }
     isInclude = tagsInclude === tags.length;
   })
   return isInclude;
@@ -95,11 +87,11 @@ export function filterByTagUstensil(ustensils, tags, isInclude) {
   }
   let tagsInclude = 0;
   tags.forEach((tag) => {
-    ustensils.forEach((ustensil) => {
-        if (ustensil.toLowerCase().includes(tag.trim().toLowerCase())) {
-            tagsInclude++;
-          }
-    })
+    if(ustensils.find((ustensil) => ustensil.trim()
+    .toLowerCase()
+    .includes(tag.trim().toLowerCase()))){
+      tagsInclude++;
+    }
     isInclude = tagsInclude === tags.length;
   })
   return isInclude;
