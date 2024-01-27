@@ -1,6 +1,7 @@
 import { recipes } from '../../../data/recipes.js';
 
 export function runSearch2(tagsData) {
+  console.time('Boucle')
   let searchResults = [];
   for (let i = 0; i < recipes.length; i++) {
     let isInclude = filterByMainText(recipes[i], tagsData.text);
@@ -23,6 +24,7 @@ export function runSearch2(tagsData) {
       searchResults.push(recipes[i]);
     }
   }
+  console.timeEnd('Boucle')
   return searchResults;
 }
 
