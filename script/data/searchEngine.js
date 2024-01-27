@@ -76,7 +76,13 @@ export function filterByTagIngredient(ingredients, tags, isInclude) {
       if (
         ingredients[iI].ingredient.trim()
           .toLowerCase()
-          .includes(tags[i].trim().toLowerCase())
+          === tags[i].trim().toLowerCase()
+          || `${ingredients[iI].ingredient.trim()
+          .toLowerCase()}s`
+          === tags[i].trim().toLowerCase()
+          || ingredients[iI].ingredient.trim()
+          .toLowerCase()
+          === `${tags[i].trim().toLowerCase()}s`
       ) {
         tagsInclude++;
       }
