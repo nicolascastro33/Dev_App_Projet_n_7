@@ -10,7 +10,7 @@ import {
 export function displayNewRecipes() {
   const filterData = sortByData();
   const newData = runSearch(filterData);
-  // console.log(newData.length === newData2.length);
+
 
   // On efface toutes les recettes ou message d'erreur sur l'interface
   const erroMessageWrapper = document.getElementById('errorMessage');
