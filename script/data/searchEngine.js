@@ -2,28 +2,27 @@ import { recipes } from '../../../data/recipes.js';
 
 export function runSearch(tagsData) {
   let searchResults = [];
-  recipes.forEach((recipe) => {
-    let isInclude = filterByMainText(recipe, tagsData.text);
+  for (let i = 0; i < recipes.length; i++) {
+    let isInclude = filterByMainText(recipes[i], tagsData.text);
     isInclude = filterByTagAppliance(
-      recipe.appliance,
+      recipes[i].appliance,
       tagsData.appliances,
       isInclude
     );
     isInclude = filterByTagUstensil(
-      recipe.ustensils,
+      recipes[i].ustensils,
       tagsData.ustensils,
       isInclude
     );
     isInclude = filterByTagIngredient(
-      recipe.ingredients,
+      recipes[i].ingredients,
       tagsData.ingredients,
       isInclude
     );
     if (isInclude) {
-      searchResults.push(recipe);
+      searchResults.push(recipes[i]);
     }
-  });
-
+  }
   return searchResults;
 }
 
@@ -41,12 +40,12 @@ export function filterByMainText(recipe, text) {
   ) {
     isInclude = true;
   }
-  recipe.ingredients.forEach((ingredients) => {
-    const ingredient = ingredients.ingredient;
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    const ingredient = recipe.ingredients[i].ingredient;
     if (ingredient.toLowerCase().includes(text.trim().toLowerCase())) {
       isInclude = true;
     }
-  });
+  }
   return isInclude;
 }
 
@@ -56,11 +55,12 @@ export function filterByTagAppliance(appliance, tags, isInclude) {
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
-  tags.forEach((tag) => {
-    if (!appliance.toLowerCase().includes(tag.trim().toLowerCase())) {
-        isInclude = false;
-      }
-  })
+
+  for (let i = 0; i < tags.length; i++) {
+    if (!appliance.toLowerCase().includes(tags[i].trim().toLowerCase())) {
+      isInclude = false;
+    }
+  }
   return isInclude;
 }
 
@@ -71,36 +71,36 @@ export function filterByTagIngredient(ingredients, tags, isInclude) {
     return isInclude;
   }
   let tagsInclude = 0;
-  tags.forEach((tag) => {
-    ingredients.forEach((oneIngredient) => {
-        if (
-            oneIngredient.ingredient
-              .trim()
-              .toLowerCase()
-              .includes(tag.trim().toLowerCase())
-          ) {
-            tagsInclude++;
-          }
-    })
+  for (let i = 0; i < tags.length; i++) {
+    for (let iI = 0; iI < ingredients.length; iI++) {
+      if (
+        ingredients[iI].ingredient.trim()
+          .toLowerCase()
+          .includes(tags[i].trim().toLowerCase())
+      ) {
+        tagsInclude++;
+      }
+    }
     isInclude = tagsInclude === tags.length;
-  })
+  }
   return isInclude;
 }
 
-export function filterByTagUstensil(ustensils, tags, isInclude) {
+export function filterByTagUstensil(ustensil, tags, isInclude) {
   if (!isInclude) {
     return isInclude;
   } else if (tags === undefined || tags.length === 0) {
     return isInclude;
   }
   let tagsInclude = 0;
-  tags.forEach((tag) => {
-    ustensils.forEach((ustensil) => {
-        if (ustensil.toLowerCase().includes(tag.trim().toLowerCase())) {
-            tagsInclude++;
-          }
-    })
+  for (let i = 0; i < tags.length; i++) {
+    for (let iU = 0; iU < ustensil.length; iU++) {
+      if (ustensil[iU].toLowerCase().includes(tags[i].trim().toLowerCase())) {
+        tagsInclude++;
+      }
+    }
     isInclude = tagsInclude === tags.length;
-  })
+  }
+
   return isInclude;
 }
