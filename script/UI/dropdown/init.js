@@ -51,8 +51,19 @@ function openingDropdown() {
   const selected = document.querySelectorAll('.selected');
 
   selected.forEach((element) => {
-    element.addEventListener('click', () => {
-      element.closest('.select-box').classList.toggle('open');
+    element.addEventListener('click', (event) => {
+      const openedDropdown = document.querySelectorAll('.open');
+      if (
+        openedDropdown.length === 1 &&
+        !event.target.closest('.select-box').classList.contains('open')
+      ) {
+        openedDropdown.forEach((open) => {
+          open.classList.remove('open');
+        });
+        element.closest('.select-box').classList.toggle('open');
+      } else {
+        element.closest('.select-box').classList.toggle('open');
+      }
     });
   });
 }

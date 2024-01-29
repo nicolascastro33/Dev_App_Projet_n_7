@@ -54,13 +54,13 @@
 
     <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
       <nav class="tablet:grid tablet:grid-cols-nav tablet:mb-5 flex flex-col-reverse items-start">
-        <div class="w-[100%] tablet:flex tablet:items-start tablet:flex-row tablet:justify-between items-center grid grid-cols-3 gap-3">
+        <div class="w-[100%] flex flex-col tablet:items-start tablet:flex-row tablet:justify-between items-center gap-3">
           <div
-            class="select-box ingredients bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
+            class="select-box ingredients bg-white w-[100%] desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
             id="ingredient"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 hidden absolute w-[100%] top-7 bg-white rounded-lg shadow-lg z-[5]"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -72,14 +72,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-2 tablet:h-3"
+                      class="h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-3 tablet:h-4 ml-2"
+                      class="h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -89,22 +89,22 @@
               ></div>
             </div>
             <div
-              class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
+              class="flex justify-between items-center cursor-pointer z-[6] p-2 selected"
             >
-              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Ingrédients</h2>
+              <h2>Ingrédients</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-1 tablet:h-2 rotate-0 transition-all"
+                class="h-2 rotate-0 transition-all"
               />
             </div>
           </div>
           <div
-            class="select-box appliance bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative "
+            class="select-box appliance bg-white w-[100%] desktop:w-56 flex flex-col shadow-lg rounded-lg relative "
             id="appliance"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 hidden absolute w-[100%] top-7 bg-white rounded-lg shadow-lg z-[3]"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -116,14 +116,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-2 tablet:h-3"
+                      class="h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-3 tablet:h-4 ml-2"
+                      class="h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -133,22 +133,22 @@
               ></div>
             </div>
             <div
-              class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
+              class="flex justify-between items-center cursor-pointer z-[4] p-2 selected"
             >
-              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Appareils</h2>
+              <h2>Appareils</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-1 tablet:h-2 rotate-0 transition-all"
+                class="h-2 rotate-0 transition-all"
               />
             </div>
           </div>
           <div
-            class="select-box ustensils bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
+            class="select-box ustensils bg-white w-[100%] desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
             id="ustensil"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 w-[100%] hidden absolute top-7 bg-white rounded-lg shadow-lg z-[1]"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -160,14 +160,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-2 tablet:h-3"
+                      class="h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-3 tablet:h-4 ml-2"
+                      class="h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -177,19 +177,19 @@
               ></div>
             </div>
             <div
-              class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
+              class="flex justify-between items-center cursor-pointer z-[2] p-2 selected"
             >
-              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Ustensiles</h2>
+              <h2>Ustensiles</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-1 tablet:h-2 rotate-0 transition-all"
+                class="h-2 rotate-0 transition-all"
               />
             </div>
           </div>
         </div>
         <aside
-          class="pb-2 flex justify-end font-semibold font-anton tablet:p-2 tablet:text-lg text-sm numberRecipes"
+          class="pb-2 flex justify-end font-semibold font-anton text-lg numberRecipes"
         >
           <h2></h2>
         </aside>
@@ -197,7 +197,7 @@
       <section class="tablet:grid laptop:grid-cols-4 tagsSection cursor-auto gap-4 tablet:grid-cols-3 phone:flex phone:flex-col phone:mt-5 phone:justify-center phone:items-center"></section>
       <p id="errorMessage" class="mt-10"></p>
       <section
-        class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 mt-12 gap-6 min-h-28 recipesSection"
+        class="grid desktop:grid-cols-3 grid-cols-1 mt-12 gap-6 min-h-28 recipesSection"
       ></section>
     </main>
   </body>
