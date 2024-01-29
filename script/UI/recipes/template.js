@@ -5,7 +5,7 @@ export function recipeTemplates(data) {
   img.src = `./assets/recipesPictures/${data.image}`;
   img.alt = data.name;
   img.className =
-    'absolute w-[105%] translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%]';
+    'absolute w-[150%] translate-x-[-50%] translate-y-[-50%] top-[50%] left-[50%]';
   imgWrapper.appendChild(img);
 
   const textWrapper = document.createElement('div');
