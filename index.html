@@ -28,7 +28,7 @@
         class="w-9/12 m-auto lg:mt-32 mt-36 flex flex-col justify-center items-center"
       >
         <h1
-          class="text-center text-4xl leading-[140%] text-[#FFD15B] font-bold mb-5 font-anton w-9/12"
+          class="text-center laptop:text-4xl desktop:text-3xl text-2xl leading-[140%] text-[#FFD15B] font-bold mb-5 font-anton w-9/12"
         >
           CHERCHEZ PARMI PLUS DE 1500 RECETTE DU QUOTIDIEN,SIMPLES ET
           DÉLICIEUSES
@@ -53,14 +53,14 @@
     </header>
 
     <main class="bg-gray-300 pb-10 pt-10 pr-16 pl-16">
-      <nav class="grid grid-cols-nav mb-5">
-        <div class="flex justify-between items-start">
+      <nav class="tablet:grid tablet:grid-cols-nav tablet:mb-5 flex flex-col-reverse items-start">
+        <div class="w-[100%] tablet:flex tablet:items-start tablet:flex-row tablet:justify-between items-center grid grid-cols-3 gap-3">
           <div
-            class="select-box ingredients bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            class="select-box ingredients bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
             id="ingredient"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -72,14 +72,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-3"
+                      class="h-2 tablet:h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-4 ml-2"
+                      class="h-3 tablet:h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -91,20 +91,20 @@
             <div
               class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
             >
-              <h2>Ingrédients</h2>
+              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Ingrédients</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-2 rotate-0 transition-all"
+                class="h-1 tablet:h-2 rotate-0 transition-all"
               />
             </div>
           </div>
           <div
-            class="select-box appliance bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            class="select-box appliance bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative "
             id="appliance"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -116,14 +116,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-3"
+                      class="h-2 tablet:h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-4 ml-2"
+                      class="h-3 tablet:h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -135,20 +135,20 @@
             <div
               class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
             >
-              <h2>Appareils</h2>
+              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Appareils</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-2 rotate-0 transition-all"
+                class="h-1 tablet:h-2 rotate-0 transition-all"
               />
             </div>
           </div>
           <div
-            class="select-box ustensils bg-white w-56 flex flex-col shadow-lg rounded-lg relative"
+            class="select-box ustensils bg-white tablet:w-36 desktop:w-56 flex flex-col shadow-lg rounded-lg relative"
             id="ustensil"
           >
             <div
-              class="options-container order-1 max-h-0 hidden absolute top-7 bg-white rounded-lg shadow-lg z-40"
+              class="options-container order-1 max-h-0 hidden absolute top-4 tablet:top-7 bg-white rounded-lg shadow-lg z-40"
             >
               <div class="flex border justify-between rounded-lg m-2">
                 <input
@@ -160,14 +160,14 @@
                     <img
                       src="./assets/logo/close.png"
                       alt="logo fermer"
-                      class="h-3"
+                      class="h-2 tablet:h-3"
                     />
                   </button>
                   <button type="button">
                     <img
                       src="./assets/logo/searchBlack.png"
                       alt="logo recherche"
-                      class="h-4 ml-2"
+                      class="h-3 tablet:h-4 ml-2"
                     />
                   </button>
                 </div>
@@ -179,22 +179,22 @@
             <div
               class="flex justify-between items-center cursor-pointer z-50 p-2 selected"
             >
-              <h2>Ustensiles</h2>
+              <h2 class="text-[0.5rem] tablet:text-sm desktop:text-base">Ustensiles</h2>
               <img
                 src="/assets/logo/arrow.png"
                 alt="arrow image"
-                class="h-2 rotate-0 transition-all"
+                class="h-1 tablet:h-2 rotate-0 transition-all"
               />
             </div>
           </div>
         </div>
         <aside
-          class="p-2 flex justify-end font-semibold font-anton text-lg numberRecipes"
+          class="pb-2 flex justify-end font-semibold font-anton tablet:p-2 tablet:text-lg text-sm numberRecipes"
         >
           <h2></h2>
         </aside>
       </nav>
-      <section class="grid grid-cols-5 tagsSection cursor-auto gap-4"></section>
+      <section class="tablet:grid laptop:grid-cols-4 tagsSection cursor-auto gap-4 tablet:grid-cols-3 phone:flex phone:flex-col phone:mt-5 phone:justify-center phone:items-center"></section>
       <p id="errorMessage" class="mt-10"></p>
       <section
         class="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 mt-12 gap-6 min-h-28 recipesSection"

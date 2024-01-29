@@ -11,7 +11,6 @@ export function displayNewRecipes() {
   const filterData = sortByData();
   const newData = runSearch(filterData);
 
-
   // On efface toutes les recettes ou message d'erreur sur l'interface
   const erroMessageWrapper = document.getElementById('errorMessage');
   const section = document.querySelector('.recipesSection');
