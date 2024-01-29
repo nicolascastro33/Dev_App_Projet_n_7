@@ -1,7 +1,6 @@
 import { sortByData } from '../utils/getDataSortBy.js';
 import { displayDataRecipes } from '../recipes/display.js';
 import { runSearch } from '../../data/searchEngine.js';
-import { runSearch2 } from '../../data/searchEngine2.js';
 import { displayNumberRecipes } from '../utils/numberRecipes.js';
 import {
   displayNewTags,
@@ -11,8 +10,6 @@ import {
 export function displayNewRecipes() {
   const filterData = sortByData();
   const newData = runSearch(filterData);
-  const newData2 = runSearch2(filterData);
-  console.log(newData.length === newData2.length);
 
   // On efface toutes les recettes ou message d'erreur sur l'interface
   const erroMessageWrapper = document.getElementById('errorMessage');
