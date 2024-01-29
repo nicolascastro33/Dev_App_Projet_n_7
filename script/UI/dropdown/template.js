@@ -6,7 +6,7 @@ export function dropdownTemplates(data, sortBy) {
       id="${data}-${sortBy}"
       name="category"
     />
-    <label for="${data}" class="cursor-pointer text-[0.5rem] tablet:text-sm desktop:text-base"
+    <label for="${data}" class="cursor-pointer"
       >${data}</label
     >
   `;
