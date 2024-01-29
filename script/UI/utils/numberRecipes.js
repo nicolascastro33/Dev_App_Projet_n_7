@@ -1,7 +1,7 @@
 export function displayNumberRecipes(){
     const numberRecipesWrapper = document.querySelector('.numberRecipes h2')
     const numberRecipes = getNumberRecipes()
-    numberRecipesWrapper.innerHTML = `${numberRecipes} recettes`
+    numberRecipesWrapper.innerHTML = numberRecipes <= 1 ? `${numberRecipes} recette` : `${numberRecipes} recettes`
 }
 
 function getNumberRecipes(){
